@@ -30,7 +30,7 @@ Chris
 MIT License
 Copyright (c) 2017 Chris de Rijcke
 
-Externnal sources used:
+**Externnal sources used**:
 libraries:
 https://datamaps.github.io/
 https://d3js.org/d3.v3.min.js
