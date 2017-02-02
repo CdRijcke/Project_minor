@@ -1,4 +1,7 @@
 # Eindproject_mprog
+Chris de Rijcke
+10645012
+
 
 Obesity
 Growing in size
@@ -9,31 +12,32 @@ With each year, the mean BMI of the world rises, going beyond health limits. To 
 
 Additional information on the fraction of the population that is obese is shown in a barchart for every country. Next to it, a scatterplot shows the relation between mean BMI and BMI related subjects, food supply, physical activity and the fraction overweight and obese. 
 
-![alt tag](https://github.com/Chrisderijcke92/Project_minor/blob/master/docs/obesitymap.png)
+![alt tag](https://github.com/Chrisderijcke92/Project_minor/blob/master/docs/obesitycharts.png)
+
+With the slider, a year can be selected, and on hover countries and cata can be highlighted.
+Dropdown menus serve to select different categories for the several visualizaion, optimizing a gain of insight into BMI and its magnitude.
+
+Have fun exploring our huge world,
 
 
-
-(line graph of years vs average BMI of the world population, not necessary for MVP)
-
-More countries with a higher BMI.
+Chris
 
 
-(infomap of obesity with a slider that sets the year, next to it a barchart can be added,making use of the same slider to represent the same data in a more overviewable form, the bars represent countries are in a certain BMI range)
+MIT License
+Copyright (c) 2017 Chris de Rijcke
 
-
-General idea of gaining weight is simple: consume more energy than you use.
-
-(scatterplot: obesity vs either physical activity or calorie intake per country, which can be switch between by the use of a button)
-
-Awereness of physical activity and calorie intake should be spread to fight obesity
-
-
-
-To create the visualization, an infomap has to be downloaded and bar graphs have to be created. Data has to be retrieved on obesity (BMI), physical activity, calorie intake, all per country and an average value per capita. 
-Obesity and physical activity data is retrievable from the World Health Organization site.
-Food consumption is retrieved from the Food and Agricultural Organization site.
-
-Probably Problematic: 
-- linking up the slider to the graph and the barchart. 
-- a switch button for the scatterplot
-- getting everything done in time
+Externnal sources used:
+libraries:
+https://datamaps.github.io/
+https://d3js.org/d3.v3.min.js
+http://getbootstrap.com/2.3.2/
+data:
+http://www.who.int/gho/ncd/risk_factors/physical_activity/en/
+https://data.humdata.org/dataset/per_capita_food_supply
+http://www.ncdrisc.org/data-downloads.html
+additional information:
+https://en.wikipedia.org/wiki/Obesity
+D3 mauls:
+https://bl.ocks.org/mbostock/3885304
+http://bl.ocks.org/weiglemc/6185069
+https://github.com/markmarkoh/datamaps
