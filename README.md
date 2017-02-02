@@ -1,13 +1,13 @@
 # Eindproject_mprog
-Chris de Rijcke
+<h2> Chris de Rijcke</h2>
 10645012
 
-<h2>Technical overview:</h2>
+<h3>Technical overview:</h3>
 This HTML contains visualizations of a map, barchart and scatterplot. All interactive in a way that they are all hoverable, highlight their linked component in each visualization. A slider and dropdown are provided to select categories. Sort option on bargraph
 
 
 
-<h2>Obesity</h2>
+<h3>Obesity</h3>
 Growing in size
 
 
