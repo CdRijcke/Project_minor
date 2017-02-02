@@ -4,8 +4,14 @@ Obesity
 Growing in size
 
 
+With each year, the mean BMI of the world rises, going beyond health limits. To create an overview on this BMI increase, a map has been created, showing the mean BMI per country for a selected year. 
+![alt tag](https://github.com/Chrisderijcke92/Project_minor/blob/master/docs/obesitymap.png)
 
-The world is getting fatter with each year.
+Additional information on the fraction of the population that is obese is shown in a barchart for every country. Next to it, a scatterplot shows the relation between mean BMI and BMI related subjects, food supply, physical activity and the fraction overweight and obese. 
+
+![alt tag](https://github.com/Chrisderijcke92/Project_minor/blob/master/docs/obesitymap.png)
+
+
 
 (line graph of years vs average BMI of the world population, not necessary for MVP)
 
