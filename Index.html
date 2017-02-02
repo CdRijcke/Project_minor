@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obesity</title>
+      <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="DESIGN/world_map.js"></script>
+    <script src="DESIGN/obesity_map.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header class = main-header, role = banner>
+
+
+</header>
+<div class = "row" style="background-color: #F7F7F7;">
+        <div class="col-sm-3">
+
+        </div>
+    <div class="col-sm-9">
+        <h1>
+    Obesity
+</h1>
+<h3>
+    Resting and Digesting
+</h3>
+    </div>
+</div>
+<div class = "row" style="background-color: #F7F7F7;">
+    <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <div class = introduction>
+    <button data-toggle="collapse" data-target="#demo">Additional information</button>
+<div id="demo" class="collapse">
+<p style="max-width: 1200px">
+        Obesity is a medical condition in which excess body fat has accumulated to the extent that it may have a negative effect on health.
+        The standard determination of obesity is done by categorizing the level of the Body Mass Index a.k.a. BMI.
+        The BMI is measured by taking the weight of an individual and dividing it by the height^2 of an indiviual, resulting in a BMI value in kg/m2.
+</br></br>
+        Throughout the years a trend is visible as the average BMI increases, exceeding health limits to such an extend that significant amounts
+        of the population categorized overweight and even obese. Naturally, a gain in BMI is made possible by an increased food consumption and a decrease
+        in physical activity.
+    </p>
+</div>
+</div>
+            </div>
+
+
+</div>
+
+<div class = "row" id = "datamap" ">
+    <div class = "col-sm-3" id = "stroke"></div>
+<div class = "col-sm-8" id = "infomap" style="position: relative; width: 100%; height:650px; max-height: 900px; max-width: 1200px;">
+    <div id = "title_infomap"  width = "1200"></div>
+        <select name="sex" id="sex">
+  <option value="Men">Male population</option>
+  <option value="Women">Female population</option>
+    <div id="slider"></div>
+    <input id="slider2" type ="range" min ="1999" max="2014" step ="1" value ="1999"/>
+            <div class = "col-sm-1" id = "stroke"></div>
+</div>
+</div>
+
+<svg class="stroke"></svg>
+
+<div class="row" style="background-color: #F7F7F7;">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-6">
+        <div class = "bar_chart" id = "bar_chart">
+        <label><input type="checkbox" id="checkbox"> Sort values</label>
+    <svg id="barchart" class = "barchart", width = "1200", height = "700"></svg>
+</div>
+    </div>
+    <div class="col-sm-4">
+        <div class = scatter_plot id = scatter_plot, width = "1200", height = "700" >
+    <select name="category" id="category_scatterplot">
+  <option value="food_supply">Food Supply</option>
+  <option value="physicial_activity">Physical Activity</option>
+        <option value="fraction_obese">Fraction Obese</option>
+        <option value="fraction_overweight">Fraction Overweight</option>
+    </select>
+    <svg id="scatterplot" class = "scatterplot", width = "800", height = "700"></svg>
+</div>
+
+    </div>
+    <div class="col-sm-1">
+    </div>
+
+</div>
+
+
+<script src="DESIGN/obesity_scatterplot.js"></script>
+<script src="DESIGN/obesity_barchart.js"></script>
+
+<svg class = "stroke" height =50px></svg>
+<div class="row">
+    <div class="col-sm-5">
+
+</div>
+        <div class="col-sm-5">
+            <div class="links"><a href="http://www.ncdrisc.org/data-downloads.html">Source BMI data</a>
+      </br><a href="http://www.who.int/gho/ncd/risk_factors/physical_activity/en/ ">Source Prevalence of insufficient physical activity</a>
+</br><a href="https://data.humdata.org/dataset/per_capita_food_supply ">Source Food supply data</a>
+            </br><a href="https://en.wikipedia.org/wiki/Obesity ">Source Additional information</a></div>
+        </div>
+</div>
+
+
+
+
+</body>
+</html>

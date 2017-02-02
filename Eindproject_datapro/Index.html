@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obesity</title>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="DESIGN/world_map.js"></script>
+
+    <script src="DESIGN/obesity_map.js"></script>
+</head>
+<body>
+<header class = main-header, role = banner>
+
+
+</header>
+<div class = "title">
+    <h1>
+    Obesity
+</h1>
+<h3>
+    Resting and Digesting
+</h3>
+</div>
+<div class = introduction>
+    <p>
+        Obesity is a medical condition in which excess body fat has accumulated to the extent that it may have a negative effect on health.
+    </p>
+</div>
+<div class = "infomap" id = "infomap" style="position: relative; width: 100%; height:650px; max-height: 700px;">
+    <div id = "title_infomap"  width = "1200"></div>
+        <select name="sex" id="sex">
+  <option value="Men">Male population</option>
+  <option value="Women">Female population</option>
+    <div id="slider"></div>
+    <input id="slider2" type ="range" min ="1999" max="2014" step ="1" value ="1999"/>
+</div>
+<div class = "stroke" height = 300px>
+<svg class ="stroke" height = 100px></svg>
+
+</div>
+    <div class = "bar_chart" id = "bar_chart">
+        <label><input type="checkbox" id="checkbox"> Sort values</label>
+    <svg id="barchart" class = "barchart", width = "1200", height = "700"></svg>
+</div>
+<div class = scatter_plot id = scatter_plot, width = "1200", height = "700" >
+    <select name="category" id="category_scatterplot">
+  <option value="food_supply">Food Supply</option>
+  <option value="physicial_activity">Physical Activity</option>
+        <option value="fraction_obese">Fraction Obese</option>
+        <option value="fraction_overweight">Fraction Overweight</option>
+    </select>
+    <svg id="scatterplot" class = "scatterplot", width = "1200", height = "700"></svg>
+</div>
+
+
+<script src="DESIGN/obesity_scatterplot.js"></script>
+<script src="DESIGN/obesity_barchart.js"></script>
+
+<svg class = "stroke" height =50px></svg>
+<div class = "source">
+    <p>
+
+    </p>
+
+</div>
+
+
+
+
+</body>
+</html>
