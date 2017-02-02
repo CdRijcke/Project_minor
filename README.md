@@ -2,8 +2,12 @@
 Chris de Rijcke
 10645012
 
+<h2>Technical overview:</h2>
+This HTML contains visualizations of a map, barchart and scatterplot. All interactive in a way that they are all hoverable, highlight their linked component in each visualization. A slider and dropdown are provided to select categories. Sort option on bargraph
 
-Obesity
+
+
+<h2>Obesity</h2>
 Growing in size
 
 
