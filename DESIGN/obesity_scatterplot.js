@@ -9,6 +9,12 @@ last added: 24-1-2017
 
 dotRadius = 5
 
+// tooltip for scatterplot
+var tooltipScatter = d3.select("body")
+      .append("div")
+      .style("position", "absolute")
+      .style("z-index", "10")
+      .style("visibility", "hidden");
 
 // place scatterplot in separate function to divide it from the barplot
 function drawScatterPlot(){
@@ -137,6 +143,7 @@ function drawScatterPlot(){
                     .style("font-size", "15px")
                     .text(titleScatter);
 
+
             // add dots
           scatterPlot.selectAll(".dot")
               .data(datas)
@@ -147,7 +154,7 @@ function drawScatterPlot(){
               .attr("x", function(d) { return x(d["country_name"]); })
               .style("fill", function(d){return determineColour(d["mean_bmi"])})
               .attr("cx", function(d) {
-                console.log(typeof d[categoryY] == "undefined")
+                console.log(d)
                if(!isNaN(+d[categoryY]) && (+d[categoryY] != 0) && (!isNaN(+d[categoryX])) && (typeof d[categoryY] != "undefined")){
                return x(+d[categoryX]); }})
               .attr("cy", function(d) {
@@ -156,10 +163,19 @@ function drawScatterPlot(){
                 }})
     //          .style("fill", function(d) { return color(d["mean_bmi"])
                 .on("mouseover", function(d){
-                    console.log("country_code on hover:", d)
+                    console.log("country_code on hover:", d["country_name"])
                     highlight_bargraph_on(d["country_code"], 1);
                     highlight_country('.datamaps-subunit.'+d["country_code"]);
                     highlight_scatterPlot_on(d["country_code"], 1);
+                    return tooltipScatter.style("visibility", "visible")
+                     .html(d["country_name"] + ": " + (d[categoryY]).toLocaleString() + getUnit(categoryY) +
+                     "<br/>" + "mean bmi: " + d["mean_bmi"] + " kg/m2")
+                        .style("top", (d3.event.pageY + 16) + "px")
+                        .style("left", (d3.event.pageX + 16) + "px");
+
+//                    + ": " +
+//                    (d[categoryY]).toLocaleString()
+
     //            .on("mousemove", function(){
     //            //                return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
                 })
@@ -167,7 +183,7 @@ function drawScatterPlot(){
                 highlight_bargraph_off(d["country_code"]);
                 reset_opacity();
                 highlight_scatterPlot_off(d["country_code"]);
-    //            return tooltip.style("visibility", "hidden");
+                return tooltipScatter.style("visibility", "hidden");
                 })
 
         }
@@ -197,3 +213,14 @@ function highlight_scatterPlot_off(country_code, meanBMI){
     .style('stroke' , "none")
     }
 
+function getUnit(catY){
+    if(catY == "physicial_activity"){
+        return " %"
+    }
+    else if(catY == "food_supply"){
+        return " kcal/person/day"
+    }
+    else{
+        return ""
+    }
+}
