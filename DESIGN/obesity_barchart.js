@@ -134,11 +134,6 @@ function drawBarchart(){
               .text("Fraction obese");
 
             // add tooltip
-            var tooltip = d3.select("body")
-              .append("div")
-              .style("position", "absolute")
-              .style("z-index", "10")
-              .style("visibility", "hidden");
 
             // create bars
             chart.selectAll(".bar")
@@ -195,6 +190,13 @@ function drawBarchart(){
         }
     });
 }
+
+// add tooltip
+    var tooltip = d3.select("body")
+      .append("div")
+      .style("position", "absolute")
+      .style("z-index", "10")
+      .style("visibility", "hidden");
 
 // draw barchart
 drawBarchart();
