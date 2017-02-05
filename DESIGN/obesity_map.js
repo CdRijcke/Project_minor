@@ -59,9 +59,12 @@ d3.json("../DATA/obesity_data.json", function(datas) {
             borderOpacity: 1,
             borderColor: 'black',
             // popup properties and enablement
-            popupTemplate: function(geography, data) {
-              return ['<div class="hoverinfo"><strong>' + geography.properties.name + '</strong>',
-              '<br/>Meat import: ' + getData(geography.id, 3).toLocaleString() + ' USD' +'<br/>',
+            popupTemplate: function(geography, datas) {
+            //console.log(geography["properties"]["name"]);
+            //console.log(geography.id)
+            //console.log(geography.id)
+              return ['<div class="hoverinfo"><strong>' + geography["properties"]["name"] + '</strong>',
+              '<br/>Mean BMI of the '+ sexTextConverter(selectedSex) + ' population: ' + getData(geography.id).toLocaleString() + ' kg/m2' +'<br/>',
                '</div>'].join('');
             },
             popupOnHover: true,
@@ -114,6 +117,25 @@ map.legend()
         updateTitle(selectedSex, selectedYear)
 //        console.log("selected year:", selectedSex)
     }
+
+    function getData(country_id){
+        for (country in datas[selectedYear][selectedSex]){
+            if(datas[selectedYear][selectedSex][country]["country_code"] == country_id){
+                return Number(datas[selectedYear][selectedSex][country]["mean_bmi"]);
+            }
+        }
+   }
+
+// retrieve sex string for right context
+   function sexTextConverter(sex){
+       var sexText = "to be determined"
+       if(selectedSex == "Men"){
+           return "male"
+       }
+       else{
+           return "female"
+       }
+   }
 });
 
 // format data to datamap compatible data
@@ -195,17 +217,6 @@ function reset_opacity(){
         'stroke' : "black"
     })
 };
-
-// retrieve sex string for right context
-function sexTextConverter(sex){
-var sexText = "to be determined"
-        if(selectedSex == "Men"){
-            return "male"
-        }
-        else{
-            return "female"
-        }
-        }
 
 // retrieve colour on mean BMI value base
 function determineColour(meanBMI){
